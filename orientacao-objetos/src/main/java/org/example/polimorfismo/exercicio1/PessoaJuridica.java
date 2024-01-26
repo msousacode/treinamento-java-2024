@@ -16,6 +16,14 @@ public class PessoaJuridica extends Contribuinte {
     }
 
     public BigDecimal calcularImposto() {
-        return BigDecimal.ZERO;
+        if (quantidadeFuncionarios.compareTo(10) == 1) {
+            return getRenda().multiply(new BigDecimal("0.14"));
+        } else {
+            return getRenda().multiply(new BigDecimal("0.16"));
+        }
+    }
+
+    public static PessoaJuridica of(String nome, BigDecimal renda, Integer quantidadeFuncionarios) {
+        return new PessoaJuridica(nome, renda, quantidadeFuncionarios);
     }
 }
