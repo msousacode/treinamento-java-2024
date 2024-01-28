@@ -1,4 +1,4 @@
-package org.example;
+package org.example.polimorfismo.exercicio1;
 
 import org.example.polimorfismo.exercicio1.Contribuinte;
 import org.example.polimorfismo.exercicio1.PessoaFisica;

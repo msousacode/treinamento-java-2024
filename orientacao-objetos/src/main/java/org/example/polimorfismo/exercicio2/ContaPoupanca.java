@@ -7,24 +7,26 @@ import java.math.BigDecimal;
  */
 public class ContaPoupanca extends ContaBancaria {
 
-    private BigDecimal taxaRendimento;
-
-    @Override
-    public void sacar(BigDecimal bigDecimal) {
-
+    public ContaPoupanca(String titular, BigDecimal saldo) {
+        super(titular, saldo);
     }
 
     @Override
-    public void depositar(BigDecimal bigDecimal) {
-
+    public void sacar(BigDecimal valorSaque) {
+        this.saldo = this.saldo.subtract(valorSaque);
     }
 
     @Override
-    public void exibirSaldo() {
-
+    public void depositar(BigDecimal valorDeposito) {
+        this.saldo = this.saldo.add(valorDeposito);
     }
 
-    public BigDecimal getTaxaRendimento() {
-        return taxaRendimento;
+    @Override
+    public BigDecimal exibirSaldo() {
+        return this.saldo;
+    }
+
+    public static ContaPoupanca of(String titular, BigDecimal saldoInicial) {
+        return new ContaPoupanca(titular, saldoInicial);
     }
 }
