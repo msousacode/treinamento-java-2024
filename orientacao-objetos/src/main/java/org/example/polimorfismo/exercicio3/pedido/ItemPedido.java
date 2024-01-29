@@ -8,8 +8,6 @@ public abstract class ItemPedido {
 
     protected BigDecimal preco;
 
-    protected abstract BigDecimal calculaPreco(int quantidade);
-
     public ItemPedido(String nome, BigDecimal preco) {
         this.nome = nome;
         this.preco = preco;

@@ -1,16 +1,25 @@
 package org.example.polimorfismo.exercicio3.pedido;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Pedido {
+public class Pedido {
 
-    protected List<ItemPedido> itens;
+    protected List<ItemPedido> itens = new ArrayList<>();
 
-    protected BigDecimal valorTotal;
+    protected BigDecimal valorTotal = BigDecimal.ZERO;
 
-    protected abstract void adicionarItem(ItemPedido itemPedido);
+    public void adicionarItem(ItemPedido itemPedido) {
+        this.itens.add(itemPedido);
+    }
 
-    protected abstract void calcularValorTotal();
+    public BigDecimal calcularValorTotal() {
+
+        for (ItemPedido i : itens) {
+            this.valorTotal = this.valorTotal.add(i.getPreco());
+        }
+        return this.valorTotal;
+    }
 }
 
