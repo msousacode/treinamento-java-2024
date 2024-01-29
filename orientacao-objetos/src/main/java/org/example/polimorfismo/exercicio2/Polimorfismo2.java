@@ -28,7 +28,7 @@ public class Polimorfismo2 {
 
     /**
      * <p>
-     * Um exemplo do uso do polimorfismo, o método aceita uma super-classe e consegue
+     * Exemplo do uso do polimorfismo, o método aceita uma super-classe e consegue
      * internamente aplicar lógicas espeficícas diferenciando as sub-classes e suas implementações.
      * </p>
      * @param contaBancaria
