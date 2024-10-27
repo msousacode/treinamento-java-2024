@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Deck ID Fetcher",
+    "version": "1.0",
+    "permissions": ["alarms", "scripting", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"      
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
